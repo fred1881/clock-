@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+2
+<html>
+3
+<head>
+4
+  <title>clock</title>
+5
+  <meta name="viewport" content="width=320, initial-scale=1">
+6
+  <style>
+7
+body {
+8
+  background-color: lightblue;
+9
+}
+10
+​
+11
+h1 {
+12
+  color: red;
+13
+  text-align: center;
+14
+}
+15
+​
+16
+p {
+17
+  font-family: verdana;
+18
+  font-size: 60px;
+19
+  color: #fffe00
+20
+}
+21
+</style>
+22
+<script>
+23
+function startTime() {
+24
+  var today = new Date();
+25
+  var h = today.getHours();
+26
+  var m = today.getMinutes();
+27
+  var s = today.getSeconds();
+28
+  m = checkTime(m);
+29
+  s = checkTime(s);
+30
+  document.getElementById('txt').innerHTML =
+31
+  h + ":" + m + ":" + s;
+32
+  var t = setTimeout(startTime, 500);
+33
+}
+34
+function checkTime(i) {
+35
+  if (i < 10) {i = "0" + i};  
+36
+  return i;
+37
+}
+38
+</script>
+39
+</head>
+40
+<body onload="startTime()">
+41
+<h1>
+42
+  time is
+43
+  </h1>
+44
+  <p id="txt"></p>
+45
+</body>
+46
+</html>
